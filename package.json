@@ -1,27 +1,16 @@
 {
-  "name": "hood-hunterproj",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
-    "build": "cd client && react-scripts build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jnperk1234/hood-hunterproj.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jnperk1234/hood-hunterproj/issues"
-  },
-  "homepage": "https://github.com/jnperk1234/hood-hunterproj#readme",
+  "name": "project-3",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.16.3",
-    "mongoose": "^5.1.7"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

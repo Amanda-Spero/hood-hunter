@@ -1,0 +1,6 @@
+.banner {
+    background-image: url("public/assests/images/city.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
