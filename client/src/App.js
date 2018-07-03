@@ -6,16 +6,21 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 const App = () => (
+   
       <Router>
-        <div>
-        <Nav />
-          <Switch>
-            <Route exact path="/" component={MainSearch} />
+        <div className="App Site"> 
+        <div className="App-header">
+            <Nav />
+          </div>
+          <div className="main">
+            <Switch>
+            <Route path="/" component={MainSearch} />
           </Switch>
+          </div>
         <Footer/>
-        </div>
+      </div>
       </Router>
-  
+   
     );
 
 export default App;
