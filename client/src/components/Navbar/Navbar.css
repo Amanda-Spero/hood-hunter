@@ -1,0 +1,9 @@
+.hide-on-med-and-down {
+    display: block !important;
+  }
+  #nav-mobile {
+    display: none;
+  }
+  .button-collapse {
+    display: none;
+  }
