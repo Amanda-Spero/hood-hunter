@@ -1,27 +1,29 @@
 import React, {Component} from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import { Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import SearchBar from "../../components/SearchBar";
 import SearchResults from "../../components/SearchResults";
+import SearchForm from "../../components/SearchForm";
 
 class MainSearch extends Component {
     render() {
         return (
-          <Container>     
-            <Row>
-              <Col size="s12">    
-                <Jumbotron />
-              </Col>     
-            </Row> 
-
-            <Row>
-              <Col size="s12">          
+          <Container>    
+                <Jumbotron />          
                 <SearchBar />
-              </Col>
-            </Row>
-            
-          <SearchResults />
-            </Container>
+          <div className="container">
+            <div className="section">
+              <div className="row">
+                <div className="col s12 m5">
+                  <SearchForm /> 
+              </div>    
+                <div className="col s12 m7">      
+                  <SearchResults />
+                </div>
+              </div>
+            </div>                        
+           </div>
+          </Container>
  
           
     );
