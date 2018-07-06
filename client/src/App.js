@@ -4,17 +4,34 @@ import Nav from "./components/Nav";
 import MainSearch from "./pages/MainSearch";
 import Footer from "./components/Footer";
 import "./App.css";
+import {Provider} from "react-redux";
+
+//Import store for application state
+import store from "./store";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import {setCurrentUser} from "./actions/authActions";
+
+if(localStorage.jwtToken) {
+  //set auth token header auth
+  setAuthToken(localStorage.jwtToken);
+  const decoded = jwt_decode(localStorage.jwtToken);
+  console.log(decoded)
+  store.dispatch(setCurrentUser(decoded));
+}
 
 class App extends Component {
   render() {
     return (
-    <Router>
-      <React.Fragment>
-          <Nav/>
-            <Route exact path="/" component={MainSearch}/>
-          <Footer/>
-      </React.Fragment>
-    </Router>
+      <Provider store={store}>
+        <Router>
+          <React.Fragment>
+              <Nav/>
+                <Route exact path="/" component={MainSearch}/>
+              <Footer/>
+          </React.Fragment>
+        </Router>
+      </Provider>
     )
   }
 }
