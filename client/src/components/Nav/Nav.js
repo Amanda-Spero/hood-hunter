@@ -21,7 +21,7 @@ class Nav extends Component {
         <NavItem href='/login' style={styleFont.sideNavLinks}>Login</NavItem>
         <NavItem href='/register' style={styleFont.sideNavLinks}>Register</NavItem>
         <NavItem href='/' style={styleFont.sideNavLinks}>Saved Searches</NavItem>
-        <NavItem onClick={()=> alert("Logout")}>Logout</NavItem>
+        <NavItem onClick={()=> alert("Logout")} style={styleFont.sideNavLinks}>Logout</NavItem>
       </Navbar>
     )
   }
