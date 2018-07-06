@@ -1,4 +1,5 @@
 import React from "react";
+import "../utils/APIs/geocodeAPI.js";
 
 const SearchBar = () => (
  <nav>
