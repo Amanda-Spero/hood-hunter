@@ -1,6 +1,6 @@
-/*
+
 module.exports = {
-    Hunter: require("./hunter")
+    Hunter: require("./hunter"),
+    User: require("./User")
 };
 
-*/
