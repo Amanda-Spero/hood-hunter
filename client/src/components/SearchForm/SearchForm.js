@@ -15,7 +15,7 @@ const SearchForm = () => (
                 <label htmlFor="shopping">Shopping</label>
             </p>
             <p>
-                <input type="checkbox" name="nightlife"/>
+                <input type="checkbox" name="nightlife" id="nightlife"/>
                 <label htmlFor="nightlife">Night Life</label>
             </p>
 
