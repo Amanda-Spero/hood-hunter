@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import Nav from "./components/Nav";
 import MainSearch from "./pages/MainSearch";
 import Footer from "./components/Footer";
@@ -9,17 +9,11 @@ class App extends Component {
   render() {
     return (
     <Router>
-      <div className="App Site"> 
-      <div className="App-header">
-          <Nav />
-        </div>
-        <div className="main">
-          <Switch>
-          <Route path="/" component={MainSearch} />
-        </Switch>
-        </div>
-      <Footer/>
-      </div>
+      <React.Fragment>
+          <Nav/>
+            <Route exact path="/" component={MainSearch}/>
+          <Footer/>
+      </React.Fragment>
     </Router>
     )
   }
