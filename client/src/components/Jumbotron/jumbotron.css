@@ -1,6 +1,8 @@
-.banner {
-    background-image: url("public/assests/images/city.jpg");
+
+.parallax {
+    background-image: linear-gradient(to bottom,transparent 0%, transparent 50%, white),url("https://cdn.theculturetrip.com/images/56-3940160-1441141742b47c175bf5824bf29f6cb0b91be2bd55.jpg");
+    background-position: 55% 100%;
     background-repeat: no-repeat;
-    height: 100vh;
     background-size: cover;
+    opacity: .85;
 }
