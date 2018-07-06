@@ -4,8 +4,8 @@ import { Navbar, NavItem } from 'react-materialize';
 
 class Nav extends Component {
   componentDidMount() {
-    // const el = document.querySelector('.nav-wrapper')
-    // el.classList.add("container")
+    const el = document.querySelector('.nav-wrapper')
+    el.classList.add("container")
   }
   render() {
     const styleFont = {
