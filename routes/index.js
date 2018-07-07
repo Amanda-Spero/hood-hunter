@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4609ea612f11308097b5ad62c873a8c513fbd471
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
@@ -9,4 +13,9 @@ router.use(function(req, res) {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+
+>>>>>>> 4609ea612f11308097b5ad62c873a8c513fbd471
