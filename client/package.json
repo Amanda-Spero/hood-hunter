@@ -5,11 +5,14 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.16.2",
+    "google-map-react": "^1.0.5",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.4.1",
+    "react-google-maps": "^9.4.5",
     "react-materialize": "^2.3.3",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.14"
+    "react-scripts": "1.0.14",
+    "recompose": "^0.27.1"
   },
   "scripts": {
     "start": "react-scripts start",

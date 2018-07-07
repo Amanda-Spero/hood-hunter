@@ -13,7 +13,6 @@ function getCoords() {
 
   document.getElementById('search').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
-    console.log("click registered");
   });
 }
 
@@ -41,5 +40,5 @@ function geocodeAddress(geocoder, resultsMap) {
 }
 
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwCUd2sBpkCjzvyXkGukLmlEAke3bHVK0&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=" + keys.google + "&callback=initMap">
 </script>
