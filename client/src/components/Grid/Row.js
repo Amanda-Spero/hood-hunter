@@ -1,7 +1,5 @@
 import React from "react";
 
-export const Row = ({ children }) => (
-    <div className={`row`}>
-        {children}
-    </div>
-);
+export const Row = props => (
+    <div className="row">{props.children}</div>
+)
