@@ -4,26 +4,29 @@
   "description": "Project 3 - Hood Hunter",
   "main": "server.js",
   "dependencies": {
-    "axios": "^0.18.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.1",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "validator": "^10.4.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "yarn": "^1.7.0"
   },
   "scripts": {
-    "server": "node server.js",
-    "client": "cd client && npm run start",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "concurrently": "^3.6.0",
-    "nodemon": "^1.17.5"
-  }
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "neighbormodel.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnperk1234/hood-hunterproj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnperk1234/hood-hunterproj/issues"
+  },
+  "homepage": "https://github.com/jnperk1234/hood-hunterproj#readme"
 }
