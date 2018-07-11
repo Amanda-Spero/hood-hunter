@@ -32,6 +32,7 @@ class App extends Component {
                 <Route exact path="/" component={MainSearch}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/register" component={Register}/>
+                <Route exact path="/social" component={SocialPage} />
               <Footer/>
           </React.Fragment>
         </Router>
