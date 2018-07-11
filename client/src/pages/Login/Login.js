@@ -15,6 +15,12 @@ class Login extends Component {
             errors: {}
         }
     }
+    componentDidMount() {
+        //if user is logged in already return to home page or some other page.
+        if(this.props.auth.isAuthenticated) {
+            this.props.history.push("/")
+        }
+    }
     componentWillReceiveProps(nextProps) {
         if(nextProps.auth.isAuthenticated) {
             this.props.history.push('/')
@@ -55,7 +61,7 @@ class Login extends Component {
                                     <Input type="password" id="password" name="password" onChange={this.handleInputChange} value={this.state.password} className={errors.password ? "validate invalid" : ""}/>
                                     <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className={errors.password ?"active" : ""}>Password</Label>
                                 </InputField>
-                                <Button className="btn waves-effect waves-light" onClick={this.handleLogin}>Login</Button>
+                                <Button className="btn waves-effect waves-light blue-grey" onClick={this.handleLogin}>Login</Button>
                             </FormContainer>
                         </Column>
                     </Row>

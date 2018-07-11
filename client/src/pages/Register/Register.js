@@ -18,6 +18,12 @@ class Register extends Component {
             errors: {}
         }
     }
+    componentDidMount() {
+        //If user is logged in already, then return to home page or some other page.
+        if(this.props.auth.isAuthenticated) {
+            this.props.history.push("/")
+        }
+    }
     componentWillReceiveProps(nextProps) {
         console.log(nextProps)
         if(nextProps.errors) {
@@ -67,7 +73,7 @@ class Register extends Component {
                                     <Input type="password" id="password2" name="password2" onChange={this.handleInputChange} className={errors.password2 ? "validate invalid" : ""}/>
                                     <Label htmlFor="password2" value={this.state.password2} data-error={errors.password2 ? errors.password2 : ""} className={errors.password2 ?"active" : ""}>Confirm Password</Label>
                                 </InputField>
-                                <Button className="btn waves-effect waves-light" onClick={this.handleRegister}>Register</Button>
+                                <Button className="btn waves-effect waves-light blue-grey" onClick={this.handleRegister}>Register</Button>
                             </FormContainer>
                         </Column>
                     </Row>
