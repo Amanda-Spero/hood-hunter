@@ -5,6 +5,7 @@ import MainSearch from "./pages/MainSearch";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Footer from "./components/Footer";
+import SocialPage from "./pages/SocialPage";
 import "./App.css";
 import {Provider} from "react-redux";
 
@@ -32,6 +33,7 @@ class App extends Component {
                 <Route exact path="/" component={MainSearch}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/register" component={Register}/>
+                <Route exact path="/social" component={SocialPage} />
               <Footer/>
           </React.Fragment>
         </Router>
