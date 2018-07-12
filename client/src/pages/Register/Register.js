@@ -5,7 +5,7 @@ import Section from "../../components/Section";
 import {Button, FormContainer, Input, InputField, Label} from "../../components/Form/index";
 import {Column, Row} from "../../components/Grid"
 import {connect} from "react-redux";
-import {registerUser} from "../../actions/authActions";
+import {registerUser, clearErrors} from "../../actions/authActions";
 import {withRouter} from "react-router-dom";
 class Register extends Component {
     constructor() {
@@ -47,6 +47,7 @@ class Register extends Component {
             password: this.state.password,
             password2: this.state.password2
         }
+        this.props.clearErrors()
         this.props.registerUser(newUser, this.props.history);
     }
     render() {
@@ -84,6 +85,7 @@ class Register extends Component {
 }
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
+    clearErrors: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 }
@@ -91,4 +93,4 @@ const mapStateToProps = (state) => ({
     auth: state.auth,
     errors: state.errors
 })
-export default connect(mapStateToProps, {registerUser})(withRouter(Register));
+export default connect(mapStateToProps, {registerUser, clearErrors})(withRouter(Register));

@@ -5,7 +5,7 @@ import {Button, FormContainer, Input, InputField, Label} from "../../components/
 import {Column, Row} from "../../components/Grid";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import {loginUser} from "../../actions/authActions";
+import {loginUser, clearErrors} from "../../actions/authActions";
 class Login extends Component {
     constructor() {
         super()
@@ -43,6 +43,7 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
+        this.props.clearErrors()
         this.props.loginUser(currentUser);
     }
     render() {
@@ -72,6 +73,7 @@ class Login extends Component {
 }
 Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
+    clearErrors: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 }
@@ -79,4 +81,4 @@ const mapStateToProps = state => ({
     errors: state.errors,
     auth: state.auth
 })
-export default connect(mapStateToProps, {loginUser})(Login);
+export default connect(mapStateToProps, {loginUser, clearErrors})(Login);

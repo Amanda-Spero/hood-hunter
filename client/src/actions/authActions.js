@@ -1,7 +1,7 @@
 import API from "../utils/API";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
-import  {GET_ERRORS, SET_CURRENT_USER} from "./types";
+import  {GET_ERRORS, SET_CURRENT_USER, CLEAR_VALIDATION_ERRORS} from "./types";
 //Register User
 export const registerUser = (userData, history) => dispatch => {
     API.register(userData)
@@ -49,3 +49,15 @@ export const logoutUser = () => dispatch => {
     setAuthToken(false)
     dispatch(setCurrentUser({}))
 }
+
+export const setValidationErrors = (errors) => {
+    return {
+        type: CLEAR_VALIDATION_ERRORS,
+        payload: errors  
+    }
+}
+
+export const clearErrors = () => dispatch => {
+    dispatch(setValidationErrors({}))
+}
+
