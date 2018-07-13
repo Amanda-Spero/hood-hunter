@@ -55,12 +55,12 @@ class Login extends Component {
                         <Column className="col m12">
                             <FormContainer>
                                 <InputField>
-                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} value={this.state.email} className={errors.email ? "validate invalid" : ""}/>
-                                    <Label htmlFor="email" data-error={errors.email ? this.state.errors.email : ""} className={errors.email ?"active" : ""}>Email</Label>
+                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} className={errors.email ? "validate invalid" : ""}/>
+                                    <Label htmlFor="email" data-error={errors.email ? this.state.errors.email : ""} className="active">Email</Label>
                                 </InputField>
                                 <InputField>
-                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange} value={this.state.password} className={errors.password ? "validate invalid" : ""}/>
-                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className={errors.password ?"active" : ""}>Password</Label>
+                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange} className={errors.password ? "validate invalid" : ""}/>
+                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className="active">Password</Label>
                                 </InputField>
                                 <Button className="btn waves-effect waves-light blue-grey" onClick={this.handleLogin}>Login</Button>
                             </FormContainer>

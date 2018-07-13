@@ -59,20 +59,20 @@ class Register extends Component {
                         <Column className="col m12">
                             <FormContainer>
                                 <InputField>
-                                    <Input type="text" id="name" name="name" onChange={this.handleInputChange} value={this.state.name} className={errors.name ? "validate invalid" : ""}/>
-                                    <Label htmlFor="name" data-error={errors.name ? errors.name : ""} className={errors.name ?"active" : ""}>Name</Label>
+                                    <Input type="text" id="name" name="name" onChange={this.handleInputChange} className={errors.name ? "validate invalid" : ""}/>
+                                    <Label htmlFor="name" data-error={errors.name ? errors.name : ""} className="active">Name</Label>
                                 </InputField>
                                 <InputField>
-                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} value={this.state.email} className={errors.email ? "validate invalid" : ""}/>
-                                    <Label htmlFor="email" data-error={errors.email ? errors.email : ""} className={errors.email ?"active" : ""}>Email</Label>
+                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} className={errors.email ? "validate invalid" : ""}/>
+                                    <Label htmlFor="email" data-error={errors.email ? errors.email : ""} className="active">Email</Label>
                                 </InputField>
                                 <InputField>
-                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange} value={this.state.password} className={errors.password ? "validate invalid" : ""}/>
-                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className={errors.password ?"active" : ""}>Password</Label>
+                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange}className={errors.password ? "validate invalid" : ""}/>
+                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className="active">Password</Label>
                                 </InputField>
                                 <InputField>
                                     <Input type="password" id="password2" name="password2" onChange={this.handleInputChange} className={errors.password2 ? "validate invalid" : ""}/>
-                                    <Label htmlFor="password2" value={this.state.password2} data-error={errors.password2 ? errors.password2 : ""} className={errors.password2 ?"active" : ""}>Confirm Password</Label>
+                                    <Label htmlFor="password2" data-error={errors.password2 ? errors.password2 : ""} className="active">Confirm Password</Label>
                                 </InputField>
                                 <Button className="btn waves-effect waves-light blue-grey" onClick={this.handleRegister}>Register</Button>
                             </FormContainer>

@@ -1,6 +1,7 @@
 
 module.exports = {
     // Hunter: require("./hunter"),
-    User: require("./User")
+    User: require("./User"),
+    SearchHistory: require("./SearchHistory")
 };
 
