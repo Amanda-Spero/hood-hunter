@@ -23,13 +23,8 @@ if(localStorage.jwtToken) {
   const decoded = jwt_decode(localStorage.jwtToken);
   console.log(decoded)
   store.dispatch(setCurrentUser(decoded));
-  //Check for expired token
-  const currentTime = Date.now() / 1000
-  if(decoded.exp < currentTime) {
-    //Logout User
-    store.dispatch(logoutUser)
-    window.location.href = "/";
-  }
+ VC
+ 
 }
 
 class App extends Component {
