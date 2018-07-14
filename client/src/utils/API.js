@@ -6,5 +6,11 @@ export default {
     },
     register: (params) => {
         return axios.post("/api/users/register", params);
+    },
+    getSearchHistory: (id) => {
+        return axios.get(`/api/users/history/${id}`);
+    },
+    addSearchHistory: (params) => {
+        return axios.post("/api/users/history", params)
     }
 }

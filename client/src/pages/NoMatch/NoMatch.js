@@ -1,21 +1,20 @@
 import React, {Component} from "react";
-import { Row, Col } from "../../components/Grid";
 import Container from "../../components/Container";
+import {Column, Row} from "../../components/Grid";
 import Section from "../../components/Section";
 
-class SocialPage extends Component {
+class NoMatch extends Component {
     render() {
         return (
             <Section>
                 <Container>
-                    <Row>
-
+                    <Row className="col m12">
+                        <h1>404 - page not found</h1>
                     </Row>
                 </Container>
             </Section>
-
         )
     }
 }
 
-export default SocialPage;
+export default NoMatch;

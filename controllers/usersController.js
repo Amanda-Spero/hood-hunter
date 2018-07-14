@@ -1,5 +1,6 @@
 const db = require("../models");
 const User = db.User;
+const SearchHistory = db.SearchHistory;
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
@@ -74,5 +75,17 @@ module.exports = {
     },
     currentUser: (req, res) => {
         res.json({id: req.user.id,name: req.user.name, email: req.user.email})
+    },
+    getSearchHistory: (req, res) => {
+        SearchHistory.find({user_id: req.params.id})
+        .then((history) => {
+            res.json(history)
+        }).catch(err => res.status(422).json(err))
+    },
+    addSearchHistory: (req, res) => {
+        SearchHistory.create(req.body)
+        .then((history) => {
+            res.json(history)
+        }).catch(err => res.status(422).json(err))
     }
 }

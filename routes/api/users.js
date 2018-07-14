@@ -21,4 +21,16 @@ router.route("/login")
 router.route("/currentuser")
 .get(passport.authenticate('jwt', {session: false}), usersController.currentUser)
 
+//route POST api/users/history
+//desc - add to user search history
+//access - public
+router.route("/history")
+.post(usersController.addSearchHistory)
+
+//route GET api/users/history/:id
+//desc - retrieve search history
+//access - private
+router.route("/history/:id")
+.get(passport.authenticate('jwt', {session: false}), usersController.getSearchHistory)
+
 module.exports = router;

@@ -5,7 +5,7 @@ import {Button, FormContainer, Input, InputField, Label} from "../../components/
 import {Column, Row} from "../../components/Grid";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import {loginUser} from "../../actions/authActions";
+import {loginUser, clearErrors} from "../../actions/authActions";
 class Login extends Component {
     constructor() {
         super()
@@ -13,6 +13,12 @@ class Login extends Component {
             password: "",
             email: "",
             errors: {}
+        }
+    }
+    componentDidMount() {
+        //if user is logged in already return to home page or some other page.
+        if(this.props.auth.isAuthenticated) {
+            this.props.history.push("/")
         }
     }
     componentWillReceiveProps(nextProps) {
@@ -37,6 +43,7 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
+        this.props.clearErrors()
         this.props.loginUser(currentUser);
     }
     render() {
@@ -48,14 +55,14 @@ class Login extends Component {
                         <Column className="col m12">
                             <FormContainer>
                                 <InputField>
-                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} value={this.state.email} className={errors.email ? "validate invalid" : ""}/>
-                                    <Label htmlFor="email" data-error={errors.email ? this.state.errors.email : ""} className={errors.email ?"active" : ""}>Email</Label>
+                                    <Input type="email" id="email" name="email" onChange={this.handleInputChange} className={errors.email ? "validate invalid" : ""}/>
+                                    <Label htmlFor="email" data-error={errors.email ? this.state.errors.email : ""} className="active">Email</Label>
                                 </InputField>
                                 <InputField>
-                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange} value={this.state.password} className={errors.password ? "validate invalid" : ""}/>
-                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className={errors.password ?"active" : ""}>Password</Label>
+                                    <Input type="password" id="password" name="password" onChange={this.handleInputChange} className={errors.password ? "validate invalid" : ""}/>
+                                    <Label htmlFor="password" data-error={errors.password ? errors.password : ""} className="active">Password</Label>
                                 </InputField>
-                                <Button className="btn waves-effect waves-light" onClick={this.handleLogin}>Login</Button>
+                                <Button className="btn waves-effect waves-light blue-grey" onClick={this.handleLogin}>Login</Button>
                             </FormContainer>
                         </Column>
                     </Row>
@@ -66,6 +73,7 @@ class Login extends Component {
 }
 Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
+    clearErrors: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 }
@@ -73,4 +81,4 @@ const mapStateToProps = state => ({
     errors: state.errors,
     auth: state.auth
 })
-export default connect(mapStateToProps, {loginUser})(Login);
+export default connect(mapStateToProps, {loginUser, clearErrors})(Login);
