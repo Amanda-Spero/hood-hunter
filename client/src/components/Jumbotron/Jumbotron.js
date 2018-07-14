@@ -9,7 +9,7 @@ const Jumbotron = () => (
     <h1 className="heading center yellow-text text-darken-4"> Hood Hunter</h1>
     <br /> 
     <div className="row center">
-      <h4 className="header col s12 black-text">Search your potential neighborhood below!</h4>
+      <h4 className="header col s12 black-text transparent">Search your potential neighborhood below!</h4>
     </div>
     
     <br /><br />
