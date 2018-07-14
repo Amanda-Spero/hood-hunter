@@ -23,8 +23,6 @@ if(localStorage.jwtToken) {
   const decoded = jwt_decode(localStorage.jwtToken);
   console.log(decoded)
   store.dispatch(setCurrentUser(decoded));
- VC
- 
 }
 
 class App extends Component {
