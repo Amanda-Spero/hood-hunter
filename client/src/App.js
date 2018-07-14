@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import MainSearch from "./pages/MainSearch";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import "./App.css";
 import {Provider} from "react-redux";
 
@@ -32,7 +32,7 @@ class App extends Component {
                 <Route exact path="/" component={MainSearch}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/register" component={Register}/>
-              <Footer/>
+              {/* <Footer/> */}
           </React.Fragment>
         </Router>
       </Provider>
