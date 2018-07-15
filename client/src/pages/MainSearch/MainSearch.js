@@ -1,9 +1,11 @@
 import React, {Component} from "react";
 import { Container } from "../../components/Grid";
+import Section from "../../components/Section";
 import Jumbotron from "../../components/Jumbotron";
 import MapWithASearchBox from "../../components/SearchBar";
 // import SearchResults from "../../components/SearchResults";
 // import SearchForm from "../../components/SearchForm";
+import "./Main.css";
 
 class MainSearch extends Component {
     render() {

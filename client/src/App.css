@@ -1,19 +1,52 @@
-.Site {
- display: flex;
- flex-direction: column;
- min-height: 100vh;
-}
-.Site-content {
- flex: 1 0 auto;
- padding: var( — space) var( — space) 0;
- width: 100%;
-}
-.Site-content:after {
- content: ‘\00a0’;
- display: block;
- margin-top: var( — space);
- height: 0;
- visibility: hidden;
+* {
+    box-sizing: border-box;
 }
 
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 31.5%;
+    padding: 10px;
+    height: 200px; 
+    /* border-style: solid;
+    border-color: rgb(243, 136, 44);
+    border-radius: 4px; */
+    border-width: 3px;
+    margin: 10px;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 110%;
 
+}
+.row {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  margin-top: -30px;
+ }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .footer {
+
+    width: 100%;
+    color: lightgray;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

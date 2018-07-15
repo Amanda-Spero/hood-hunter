@@ -38,6 +38,8 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <React.Fragment>
+            <div className="Site">
+              <div className="Site-content">
               <Nav/>
                 <Switch>
                   <Route exact path="/" component={MainSearch}/>
@@ -46,7 +48,11 @@ class App extends Component {
                   <Route exact path="/social" component={SocialPage} />
                   <Route component={NoMatch}/>
                 </Switch>
+                </div>
+                <div className="Site-content:after">
               <Footer/>
+                </div>
+              </div>
           </React.Fragment>
         </Router>
       </Provider>
