@@ -27,7 +27,6 @@ class Nav extends Component {
             <NavItem href='/login' style={styleFont.sideNavLinks}>Login</NavItem>
             <NavItem href='/register' style={styleFont.sideNavLinks}>Register</NavItem>
             <NavItem href='/social' style={styleFont.sideNavLinks}>Forum</NavItem>
-            <NavItem href='/comments' style={styleFont.sideNavLinks}>Comments</NavItem>
         </React.Fragment>
     )
     const authNavBarItems = (
