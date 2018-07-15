@@ -12,7 +12,7 @@ class CommentsPage extends Component {
                         <div className="row">
                             <div className="col s12">
                             <div className="card darken-1">
-                            <div className="card-content black-text">
+                            <div className="card-content black-text grey lighten-5">
                                 <span className="card-title">Joana Doe</span>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
                                 nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
@@ -21,31 +21,33 @@ class CommentsPage extends Component {
                              </div>
                             </div>
                         </div>
-          
-
-                        
-                        <form className="col s12">
-                            <Row>
-                                <div className="input-field col s6">
-                                    <textarea id="textarea1" className="materialize-textarea"></textarea>
-                                    <label htmlFor="textarea1">Say Something</label>
-                                </div>
-                            </Row>
-
-                            <Row>
-                                <div className='col-md-4'>
-                                    <button className="btn waves-effect waves-light" type="submit">Send
-                                    <i className="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </Row> 
-                     </form>
-                    </Row>
-
-                    <Row>
-
-
-
+                       { /*<!--Post Item -->*/}
+                       <div className="row">
+                       <div className="col s12 m12">
+                         <div className="card">
+                           <div className="card-content black-text grey lighten-5">
+                             <span className="card-title">Join the Conversation</span>
+                               <form className="container">
+                                 <div className = "row">
+         
+                                   <div className="input-field col s12">
+                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                        <label htmlFor="textarea1">Say Something</label>
+                                   </div>
+                                   <div className="input-field col s12">
+                                     <button className="btn waves-effect waves-light  amber darken-4" type="submit" name="action">
+                                       Submit <i className="material-icons right">send</i>
+                                     </button>
+                                   </div>
+                                 </div>
+                               </form>
+         
+         
+                           </div>
+         
+                         </div>
+                       </div>
+                     </div>
                     </Row>
                 </Container>
             </Section>
