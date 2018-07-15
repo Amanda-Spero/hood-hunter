@@ -1,4 +1,4 @@
-const express = require('expres');
+const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -11,14 +11,14 @@ const validatePostInput = require('../../validation/post');
 
 // @route GET api/posts/tet
 // @desc Tests post route
-//@acces Public
+// @acces Public
 router.get('/test', (req, res) => res.json({ msg: 'Posts Works'}));
 
-//@route POST api/posts
-//@desc Create post
-//@access Private
-route.post('/', passport.authenticate('jwt', {session:false}), (req,res) => {
-  const { errors, isValid} = validatePostInput(req, body);
+// @route POST api/posts
+// @desc Create post
+// @access Private
+router.post('/', passport.authenticate('jwt', {session:false}), (req,res) => {
+  const { errors, isValid} = validatePostInput(req.body);
 
   //check validation
   if(!isValid) {

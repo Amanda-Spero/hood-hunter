@@ -4,6 +4,7 @@ const router = require("express").Router();
 
 const usersRoutes = require("./users");
 
+const postRoutes = require("./posts");
 //Hood Hunter routes
 //router.use("/HoodHunter", hunterRoutes);
 
