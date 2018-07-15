@@ -14,7 +14,7 @@ class SocialPage extends Component {
        <div className="row">
        <div className="col s12 m12">
          <div className="card">
-           <div className="card-content black-text grey lighten-5">
+           <div className="card-content black-text blue-grey lighten-4">
              <span className="card-title">Create a Post</span>
                <form className="container">
                  <div className = "row">
@@ -40,7 +40,7 @@ class SocialPage extends Component {
     <div className="row">
             <div className="col s12">
             <div className="card darken-1">
-            <div className="card-content black-text grey lighten-5">
+            <div className="card-content black-text blue-grey lighten-5">
                 <span className="card-title">Joana Doe</span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
                 nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
@@ -53,7 +53,7 @@ class SocialPage extends Component {
         <div className="row">
             <div className="col s12">
                 <div className="card darken-1">
-                    <div className="card-content black-text grey lighten-5">
+                    <div className="card-content black-text blue-grey lighten-5">
                         <span className="card-title">John Deer</span>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
                         nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
@@ -66,7 +66,7 @@ class SocialPage extends Component {
         <div className="row">
             <div className="col s12">
                 <div className="card darken-1">
-                    <div className="card-content black-text grey lighten-5">
+                    <div className="card-content black-text blue-grey lighten-5">
                         <span className="card-title">Julian Martinez</span>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
                         nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
@@ -79,7 +79,7 @@ class SocialPage extends Component {
         <div className="row">
             <div className="col s12">
                 <div className="card darken-1">
-                    <div className="card-content black-text grey lighten-5">
+                    <div className="card-content black-text blue-grey lighten-5">
                         <span className="card-title">Maria Lopez</span>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
                         nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
