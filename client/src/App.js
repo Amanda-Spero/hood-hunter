@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import MainSearch from "./pages/MainSearch";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import CommentsPage from "./pages/Comments";
 //import Footer from "./components/Footer";
 import Footer from "./components/Footer";
 import SocialPage from "./pages/SocialPage";
@@ -46,6 +47,7 @@ class App extends Component {
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/register" component={Register}/>
                   <Route exact path="/social" component={SocialPage} />
+                  <Route exact path="/comments" component={CommentsPage} />
                   <Route component={NoMatch}/>
                 </Switch>
                 </div>
