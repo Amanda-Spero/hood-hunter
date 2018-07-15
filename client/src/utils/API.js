@@ -16,7 +16,7 @@ export default {
     createPost: (params) => {
         return axios.post("/api/posts", params)
     },
-    getPosts: (params) => {
+    getPosts: () => {
         return axios.get("/api/posts")
     },
     getPost: (id) => {
