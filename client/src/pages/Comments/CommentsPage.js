@@ -9,6 +9,21 @@ class CommentsPage extends Component {
             <Section>
                 <Container>
                     <Row>
+                        <div className="row">
+                            <div className="col s12">
+                            <div className="card darken-1">
+                            <div className="card-content black-text">
+                                <span className="card-title">Joana Doe</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
+                                nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
+                                 eveniet cum cupiditate aliquam?</p>
+                            </div>
+                             </div>
+                            </div>
+                        </div>
+          
+
+                        
                         <form className="col s12">
                             <Row>
                                 <div className="input-field col s6">
