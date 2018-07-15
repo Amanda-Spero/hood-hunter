@@ -41,16 +41,54 @@ class CommentsPage extends Component {
                                    </div>
                                  </div>
                                </form>
-         
-         
                            </div>
-         
                          </div>
                        </div>
                      </div>
 
+                    {/*comment feed*/}
+                    <Row>
+                   
+                        <div className="row">
+                            <div className="col s12">
+                                <div className="card darken-1">
+                                    <div className="card-content black-text grey lighten-5">
+                                        <span className="card-title">John Deer</span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
+                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
+                                        eveniet cum cupiditate aliquam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div className="row">
+                            <div className="col s12">
+                                <div className="card darken-1">
+                                    <div className="card-content black-text grey lighten-5">
+                                        <span className="card-title">Julian Martinez</span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
+                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
+                                        eveniet cum cupiditate aliquam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-
+                        <div className="row">
+                            <div className="col s12">
+                                <div className="card darken-1">
+                                    <div className="card-content black-text grey lighten-5">
+                                        <span className="card-title">Maria Lopez</span>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
+                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
+                                        eveniet cum cupiditate aliquam?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+          
+                    </Row>
                     </Row>
                 </Container>
             </Section>
