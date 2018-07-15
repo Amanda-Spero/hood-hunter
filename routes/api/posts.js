@@ -12,7 +12,12 @@ router.route("/test")
 //@route POST api/posts
 //@desc Create post
 //@access Private
+
+//@route GET api/posts
+//@desc get all posts
+//access Public
 router.route("/")
-.post(passport.authenticate('jwt', {session: false}), postsController.createNewPost);
+.post(passport.authenticate('jwt', {session: false}), postsController.createNewPost)
+.get(postsController.getAllPosts)
 
 module.exports = router;

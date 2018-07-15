@@ -28,7 +28,7 @@ if(localStorage.jwtToken) {
   if(decoded.exp < currentTime) {
     //Logout User
     store.dispatch(logoutUser)
-    window.location.href = "/";
+    //window.location.href = "/";
   }
 }
 

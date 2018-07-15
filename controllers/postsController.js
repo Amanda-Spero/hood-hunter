@@ -20,5 +20,10 @@ module.exports = {
         });
       
         newPost.save().then(post => res.json(post));
+    },
+    getAllPosts: (req, res) => {
+        Post.find({})
+        .then((posts) => res.json(posts))
+        .catch((err) => res.status(422).json(errors))
     }
 }
