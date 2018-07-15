@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const app = express();
 
+const posts = require("./routes/api/posts");
+
 app.use (bodyParser.json())
 app.use (bodyParser.urlencoded({extended: true}))
 
@@ -35,6 +37,7 @@ app.use(passport.initialize())
 require('./config/passport.js')(passport)
 
 app.use(routes);
+app.use('/api/posts', posts);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://crystal:WowNoU89!@ds125031.mlab.com:25031/logindemopj3")
 .then(() => console.log("mongodb connected"))
