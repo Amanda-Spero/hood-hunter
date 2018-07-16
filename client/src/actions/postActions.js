@@ -53,7 +53,7 @@ export const deletePost = (id) => dispatch => {
     .then((response) => {
         dispatch({
             type: DELETE_POST,
-            payload: response.data
+            payload: id
         })
     })
     .catch((err) => {

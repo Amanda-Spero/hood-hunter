@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { getPosts, createPost, deletePost} from "../../actions/postActions"
 import {Link} from "react-router-dom"
 import isEmpty from "../../validation/is-empty";
+import "./spanHover.css"
 class SocialPage extends Component {
     constructor() {
         super();
@@ -57,9 +58,12 @@ class SocialPage extends Component {
     componentDidMount() {
         this.props.getPosts()
     }
+    deleteAPost = (id) => {
+        this.props.deletePost(id)
+    }
     render() {
         const {posts} = this.props
-        const {errors} = this.state
+        const {id} = this.props.auth.user
         return (
             <Section>
                 <Container>
@@ -87,6 +91,8 @@ class SocialPage extends Component {
                                     <CardTitle>{post.name}</CardTitle>
                                     <CardText>{post.text}</CardText>
                                     <Link to={`/comments/${post._id}`}>Comments</Link>
+                                    <br/>
+                                    {post.user === id ? (<span className="red-text deleteLink" onClick={() => this.deleteAPost(post._id)}>Delete Post</span>):(<span></span>)}
                                 </CardContent>
                             </Card>)}
                         </Column>
@@ -103,7 +109,8 @@ SocialPage.propTypes = {
     post: PropTypes.object.isRequired,
     posts: PropTypes.array.isRequired,
     errors: PropTypes.object.isRequired,
-    auth: PropTypes.object.isRequired
+    auth: PropTypes.object.isRequired,
+    deletePost: PropTypes.func.isRequired
 }
 const mapStateToProps = (state) => ({
     post: state.post.post,
@@ -111,4 +118,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors,
     auth: state.auth
 })
-export default connect(mapStateToProps, { createPost, getPosts })(SocialPage);
+export default connect(mapStateToProps, { createPost, getPosts, deletePost })(SocialPage);
