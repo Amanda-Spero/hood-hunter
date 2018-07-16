@@ -8,7 +8,7 @@ import { Button, FormContainer, Label, TextArea, InputField } from "../../compon
 import { connect } from "react-redux";
 import { getPosts, createPost, deletePost} from "../../actions/postActions"
 import {Link} from "react-router-dom"
-
+import isEmpty from "../../validation/is-empty";
 class SocialPage extends Component {
     constructor() {
         super();
@@ -72,7 +72,7 @@ class SocialPage extends Component {
                                         <InputField>
                                             <TextArea id="text" name="text" onChange={this.handleInputChange} value={this.state.text}/>
                                             <Label className="active" htmlFor="text">Say Something</Label>
-                                            <Button className="btn waves-effect waves-light amber darken-4" onClick={this.addPost}>Submit <i className="material-icons right">send</i></Button>
+                                            {isEmpty(this.state.text) || this.state.text.length <10 || this.state.text.length > 300 ? (<Button className="btn waves-effect waves-light amber darken-4" onClick={this.addPost} disabled>Submit <i className="material-icons right">send</i></Button>):(<Button className="btn waves-effect waves-light amber darken-4" onClick={this.addPost}>Submit <i className="material-icons right">send</i></Button>)}
                                         </InputField>
                                     </FormContainer>
                                 </CardContent>
