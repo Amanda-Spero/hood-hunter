@@ -46,14 +46,10 @@ class App extends Component {
                   <Route exact path="/" component={MainSearch}/>
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/register" component={Register}/>
-                </Switch>
-                <Switch>
                   <PrivateRoute exact path="/social" component={SocialPage}/>
-                </Switch>
-                <Switch>
                   <PrivateRoute exact path="/comments/:id" component={CommentsPage}/>
+                  <Route component={NoMatch}/>
                 </Switch>
-                <Route exact path="/notfound" component={NoMatch}/>
                 </div>
                 <div className="Site-content:after">
               <Footer/>

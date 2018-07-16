@@ -77,15 +77,16 @@ class SocialPage extends Component {
                         </Column>
                     </Row>
                     <Row>
-                        {posts.map(post => <Column className="col s12 m12" key={post.id}>
-                            <Card>
+                        <Column className="col s12 m12">
+                            {posts.map(post =>
+                            <Card key={post._id}>
                                 <CardContent>
                                     <CardTitle>{post.name}</CardTitle>
                                     <CardText>{post.text}</CardText>
                                     <Link to={`/comments/${post._id}`}>Comments</Link>
                                 </CardContent>
-                            </Card>
-                        </Column>)}
+                            </Card>)}
+                        </Column>
                     </Row>
                 </Container>
             </Section>
