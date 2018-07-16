@@ -1,94 +1,85 @@
 import React, {Component} from "react";
-import { Row, Col } from "../../components/Grid";
+import PropTypes from 'prop-types'
+import { Row, Column } from "../../components/Grid";
 import Container from "../../components/Container";
 import Section from "../../components/Section";
-
+import { Card, CardContent, CardText, CardTitle } from "../../components/Card";
+import { Button, FormContainer, Label, TextArea, InputField } from "../../components/Form"
+import { connect } from "react-redux";
+import { getPost, addCommentToPost} from "../../actions/postActions"
 class CommentsPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            post: {},
+            errors: {},
+            text: ""
+        }
+    }
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            })
+        }
+        if(nextProps.post) {
+            this.setState({
+                post: nextProps.post
+            })
+        }
+        if(nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            })
+        }
+    }
+    componentDidMount() {
+        this.props.getPost(this.props.match.params.id)
+    }
+    handleInputChange = (e) => {
+        const {name, value} = e.target;
+        this.setState({
+            [name]: value
+        })
+    }
+    addComment = (e) => {
+        e.preventDefault()
+    }
     render() {
+        const {post} = this.props;
         return (
             <Section>
                 <Container>
                     <Row>
-                        <div className="row">
-                            <div className="col s12">
-                            <div className="card darken-1">
-                            <div className="card-content black-text blue-grey lighten-4">
-                                <span className="card-title">Joana Doe</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                                nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                                 eveniet cum cupiditate aliquam?</p>
-                            </div>
-                             </div>
-                            </div>
-                        </div>
-                       { /*<!--Post Item -->*/}
-                       <div className="row">
-                       <div className="col s12 m12">
-                         <div className="card">
-                           <div className="card-content black-text blue-grey lighten-4">
-                             <span className="card-title">Join the Conversation</span>
-                               <form className="container">
-                                 <div className = "row">
-         
-                                   <div className="input-field col s12">
-                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                        <label htmlFor="textarea1">Say Something</label>
-                                   </div>
-                                   <div className="input-field col s12">
-                                     <button className="btn waves-effect waves-light  amber darken-4" type="submit" name="action">
-                                       Submit <i className="material-icons right">send</i>
-                                     </button>
-                                   </div>
-                                 </div>
-                               </form>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-
-                    {/*comment feed*/}
-                    <Row>
-                   
-                        <div className="row">
-                            <div className="col s12">
-                                <div className="card darken-1">
-                                    <div className="card-content black-text blue-grey lighten-5">
-                                        <span className="card-title">John Deer</span>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                                        eveniet cum cupiditate aliquam?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     
-                        <div className="row">
-                            <div className="col s12">
-                                <div className="card darken-1">
-                                    <div className="card-content black-text blue-grey lighten-5">
-                                        <span className="card-title">Julian Martinez</span>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                                        eveniet cum cupiditate aliquam?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col s12">
-                                <div className="card darken-1">
-                                    <div className="card-content black-text blue-grey lighten-5">
-                                        <span className="card-title">Maria Lopez</span>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                                        eveniet cum cupiditate aliquam?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-          
+                        <Column className="col s12 m12">
+                            <Card>
+                                <CardContent>
+                                    <CardTitle>{post.name}</CardTitle>
+                                    <CardText>{post.text}</CardText>
+                                </CardContent>
+                            </Card>
+                        </Column>
                     </Row>
+                    <Row>
+                        <Column className="col s12 m12">
+                        <Card>
+                            <CardContent>
+                                <CardTitle>Add Comment</CardTitle>
+                                <FormContainer>
+                                    <InputField>
+                                        <TextArea id="text" name="text" onChange={this.handleInputChange}/>
+                                        <Label className="active" htmlFor="text">Say Something</Label>
+                                        <Button className="btn waves-effect waves-light amber darken-4" onClick={this.addComment}>Submit <i className="material-icons right">send</i></Button>
+                                    </InputField>
+                                </FormContainer>
+                            </CardContent>
+                            </Card>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column className="col s12 m12">
+
+                        </Column>
                     </Row>
                 </Container>
             </Section>
@@ -96,5 +87,16 @@ class CommentsPage extends Component {
         )
     }
 }
-
-export default CommentsPage;
+CommentsPage.propTypes = {
+    getPost: PropTypes.func.isRequired,
+    addCommentToPost: PropTypes.func.isRequired,
+    post: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
+}
+const mapStateToProps = (state) => ({
+    post: state.post.post,
+    errors: state.errors,
+    auth: state.auth
+})
+export default connect(mapStateToProps, {getPost, addCommentToPost})(CommentsPage);

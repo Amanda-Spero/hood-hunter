@@ -6,7 +6,8 @@ import Section from "../../components/Section";
 import { Card, CardContent, CardText, CardTitle } from "../../components/Card";
 import { Button, FormContainer, Label, TextArea, InputField } from "../../components/Form"
 import { connect } from "react-redux";
-import { getPosts, createPost } from "../../actions/postActions"
+import { getPosts, createPost, deletePost} from "../../actions/postActions"
+import {Link} from "react-router-dom"
 
 class SocialPage extends Component {
     constructor() {
@@ -19,7 +20,6 @@ class SocialPage extends Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
         if(nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
@@ -77,9 +77,15 @@ class SocialPage extends Component {
                         </Column>
                     </Row>
                     <Row>
-                        <Column className="col s12 m12">
-
-                        </Column>
+                        {posts.map(post => <Column className="col s12 m12" key={post.id}>
+                            <Card>
+                                <CardContent>
+                                    <CardTitle>{post.name}</CardTitle>
+                                    <CardText>{post.text}</CardText>
+                                    <Link to={`/comments/${post._id}`}>Comments</Link>
+                                </CardContent>
+                            </Card>
+                        </Column>)}
                     </Row>
                 </Container>
             </Section>

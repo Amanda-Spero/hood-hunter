@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import CommentsPage from "./pages/Comments";
 //import Footer from "./components/Footer";
 import Footer from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute"
 import SocialPage from "./pages/SocialPage";
 import NoMatch from "./pages/NoMatch";
 import "./App.css";
@@ -22,13 +23,12 @@ if(localStorage.jwtToken) {
   //set auth token header auth
   setAuthToken(localStorage.jwtToken);
   const decoded = jwt_decode(localStorage.jwtToken);
-  console.log(decoded)
   store.dispatch(setCurrentUser(decoded));
   //Check for expired token
   const currentTime = Date.now() / 1000
   if(decoded.exp < currentTime) {
     //Logout User
-    store.dispatch(logoutUser)
+    store.dispatch(logoutUser())
     //window.location.href = "/";
   }
 }
@@ -46,10 +46,14 @@ class App extends Component {
                   <Route exact path="/" component={MainSearch}/>
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/register" component={Register}/>
-                  <Route exact path="/social" component={SocialPage} />
-                  <Route exact path="/comments" component={CommentsPage} />
-                  <Route component={NoMatch}/>
                 </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/social" component={SocialPage}/>
+                </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/comments/:id" component={CommentsPage}/>
+                </Switch>
+                <Route exact path="/notfound" component={NoMatch}/>
                 </div>
                 <div className="Site-content:after">
               <Footer/>
