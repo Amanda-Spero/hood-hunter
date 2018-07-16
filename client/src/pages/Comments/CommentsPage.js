@@ -7,6 +7,7 @@ import { Card, CardContent, CardText, CardTitle } from "../../components/Card";
 import { Button, FormContainer, Label, TextArea, InputField } from "../../components/Form"
 import { connect } from "react-redux";
 import { getPost, addCommentToPost} from "../../actions/postActions"
+import {Link} from "react-router-dom";
 class CommentsPage extends Component {
     constructor() {
         super();
@@ -52,6 +53,11 @@ class CommentsPage extends Component {
         return (
             <Section>
                 <Container>
+                    <Row>
+                        <Column className="col s12 m12 left-align">
+                            <Link to="/social">Back to Posts</Link>
+                        </Column>
+                    </Row>
                     <Row>
                         <Column className="col s12 m12">
                             <Card>
