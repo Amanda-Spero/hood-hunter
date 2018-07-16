@@ -48,6 +48,7 @@ class CommentsPage extends Component {
     }
     render() {
         const {post} = this.props;
+        const comments = post.comments ? post.comments : [];
         return (
             <Section>
                 <Container>
@@ -79,7 +80,13 @@ class CommentsPage extends Component {
                     </Row>
                     <Row>
                         <Column className="col s12 m12">
-
+                            {comments.map(comment =>
+                            <Card key={comment._id}>
+                                <CardContent>
+                                    <CardTitle>{comment.name}</CardTitle>
+                                    <CardText>{comment.text}</CardText>
+                                </CardContent>
+                            </Card>)}
                         </Column>
                     </Row>
                 </Container>
