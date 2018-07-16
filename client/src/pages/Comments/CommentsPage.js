@@ -27,11 +27,6 @@ class CommentsPage extends Component {
                 post: nextProps.post
             })
         }
-        if(nextProps.errors) {
-            this.setState({
-                errors: nextProps.errors
-            })
-        }
     }
     componentDidMount() {
         this.props.getPost(this.props.match.params.id)
