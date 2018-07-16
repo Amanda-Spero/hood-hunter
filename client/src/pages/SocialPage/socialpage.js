@@ -1,101 +1,104 @@
-import React, {Component} from "react";
-import { Row, Col } from "../../components/Grid";
+import React, { Component } from "react";
+import PropTypes from 'prop-types'
+import { Row, Column } from "../../components/Grid";
 import Container from "../../components/Container";
 import Section from "../../components/Section";
+import { Card, CardContent, CardText, CardTitle } from "../../components/Card";
+import { Button, FormContainer, Label, TextArea, InputField } from "../../components/Form"
+import { connect } from "react-redux";
+import { getPosts, createPost } from "../../actions/postActions"
 
 class SocialPage extends Component {
+    constructor() {
+        super();
+        this.state = {
+            post: {},
+            posts: [],
+            errors: {},
+            text: ""
+        }
+    }
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps)
+        if(nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            })
+        }
+        if(nextProps.posts) {
+            this.setState({
+                posts: nextProps.posts
+            })
+        }
+        if(nextProps.post) {
+            this.setState({
+                post: nextProps.post
+            })
+        }
+    }
+    handleInputChange = (e) => {
+        const {name, value} = e.target;
+        this.setState({
+            [name]: value
+        })
+    }
+    addPost = (e) => {
+        e.preventDefault()
+        const newPost = {
+            name: this.props.auth.user.name,
+            text: this.state.text,
+            user: this.props.auth.user.id
+        }
+        this.props.createPost(newPost)
+    }
+    componentDidMount() {
+        this.props.getPosts()
+    }
     render() {
+        const {posts} = this.props
+        const {errors} = this.state
         return (
-<Section>
-<Container>
-    <Row>
+            <Section>
+                <Container>
+                    <Row>
+                        <Column className="col s12 m12">
+                            <Card>
+                                <CardContent>
+                                    <CardTitle>Create a New Post</CardTitle>
+                                    <FormContainer>
+                                        <InputField>
+                                            <TextArea id="text" name="text" onChange={this.handleInputChange}/>
+                                            <Label className="active" htmlFor="text">Say Something</Label>
+                                            <Button className="btn waves-effect waves-light amber darken-4" onClick={this.addPost}>Submit <i className="material-icons right">send</i></Button>
+                                        </InputField>
+                                    </FormContainer>
+                                </CardContent>
+                            </Card>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column className="col s12 m12">
 
-       { /*<!--Post Item -->*/}
-       <div className="row">
-       <div className="col s12 m12">
-         <div className="card">
-           <div className="card-content black-text blue-grey lighten-4">
-             <span className="card-title">Create a Post</span>
-               <form className="container">
-                 <div className = "row">
-
-                   <div className="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
-                        <label htmlFor="textarea1">Say Something</label>
-                   </div>
-                   <div className="input-field col s12">
-                     <button className="btn waves-effect waves-light  amber darken-4" type="submit" name="action">
-                       Submit <i className="material-icons right">send</i>
-                     </button>
-                   </div>
-                 </div>
-               </form>
-           </div>
-         </div>
-       </div>
-     </div>
-
-    {/*post feed*/}
-    <Row>
-    <div className="row">
-            <div className="col s12">
-            <div className="card darken-1">
-            <div className="card-content black-text blue-grey lighten-5">
-                <span className="card-title">Joana Doe</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                 eveniet cum cupiditate aliquam?</p>
-            </div>
-             </div>
-            </div>
-        </div>
-
-        <div className="row">
-            <div className="col s12">
-                <div className="card darken-1">
-                    <div className="card-content black-text blue-grey lighten-5">
-                        <span className="card-title">John Deer</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                        eveniet cum cupiditate aliquam?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-     
-        <div className="row">
-            <div className="col s12">
-                <div className="card darken-1">
-                    <div className="card-content black-text blue-grey lighten-5">
-                        <span className="card-title">Julian Martinez</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                        eveniet cum cupiditate aliquam?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="row">
-            <div className="col s12">
-                <div className="card darken-1">
-                    <div className="card-content black-text blue-grey lighten-5">
-                        <span className="card-title">Maria Lopez</span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus corporis sunt necessitatibus! Minus
-                        nesciunt soluta suscipit nobis. Amet accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-                        eveniet cum cupiditate aliquam?</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </Row>
-    </Row>
-</Container>
-</Section>
+                        </Column>
+                    </Row>
+                </Container>
+            </Section>
 
         )
     }
 }
-
-export default SocialPage;
+SocialPage.propTypes = {
+    getPosts: PropTypes.func.isRequired,
+    createPost: PropTypes.func.isRequired,
+    post: PropTypes.object.isRequired,
+    posts: PropTypes.array.isRequired,
+    errors: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
+}
+const mapStateToProps = (state) => ({
+    post: state.post.post,
+    posts: state.post.posts,
+    errors: state.errors,
+    auth: state.auth
+})
+export default connect(mapStateToProps, { createPost, getPosts })(SocialPage);

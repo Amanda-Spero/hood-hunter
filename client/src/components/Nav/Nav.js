@@ -26,13 +26,13 @@ class Nav extends Component {
         <React.Fragment>
             <NavItem href='/login' style={styleFont.sideNavLinks}>Login</NavItem>
             <NavItem href='/register' style={styleFont.sideNavLinks}>Register</NavItem>
-            <NavItem href='/social' style={styleFont.sideNavLinks}>Forum</NavItem>
         </React.Fragment>
     )
     const authNavBarItems = (
         <React.Fragment>
             <NavItem href='/' style={styleFont.sideNavLinks}>Saved Searches</NavItem>
             <NavItem onClick={this.logoutLink} style={styleFont.sideNavLinks}>Logout</NavItem>
+            <NavItem href='/social' style={styleFont.sideNavLinks}>Forum</NavItem>
         </React.Fragment>
     )
     return (
