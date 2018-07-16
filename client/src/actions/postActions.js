@@ -66,6 +66,7 @@ export const deletePost = (id) => dispatch => {
 export const addCommentToPost = (id, commentData) => dispatch => {
     API.addCommentToPost(id, commentData)
     .then((response) => {
+        console.log(response.data)
         dispatch({
             type: GET_POST,
             payload: response.data

@@ -26,6 +26,6 @@ export default {
         return axios.delete(`/api/posts/${id}`)
     },
     addCommentToPost: (id, params) => {
-        return axios.post(`/api/posts/${id}`, params)
+        return axios.post(`/api/posts/comment/${id}`, params)
     }
 }

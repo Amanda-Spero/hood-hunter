@@ -39,6 +39,12 @@ class CommentsPage extends Component {
     }
     addComment = (e) => {
         e.preventDefault()
+        const newComment = {
+            name: this.props.auth.user.name,
+            text: this.state.text,
+            user: this.props.auth.user.id
+        }
+        this.props.addCommentToPost(this.props.post._id, newComment)
     }
     render() {
         const {post} = this.props;
