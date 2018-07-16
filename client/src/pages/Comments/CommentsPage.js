@@ -45,6 +45,9 @@ class CommentsPage extends Component {
             text: this.state.text,
             user: this.props.auth.user.id
         }
+        this.setState({
+            text: ""
+        })
         this.props.addCommentToPost(this.props.post._id, newComment)
     }
     render() {
@@ -75,7 +78,7 @@ class CommentsPage extends Component {
                                 <CardTitle>Add Comment</CardTitle>
                                 <FormContainer>
                                     <InputField>
-                                        <TextArea id="text" name="text" onChange={this.handleInputChange}/>
+                                        <TextArea id="text" name="text" onChange={this.handleInputChange} value={this.state.text}/>
                                         <Label className="active" htmlFor="text">Say Something</Label>
                                         <Button className="btn waves-effect waves-light amber darken-4" onClick={this.addComment}>Submit <i className="material-icons right">send</i></Button>
                                     </InputField>

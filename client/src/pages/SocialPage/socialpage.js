@@ -49,6 +49,9 @@ class SocialPage extends Component {
             text: this.state.text,
             user: this.props.auth.user.id
         }
+        this.setState({
+            text: ""
+        })
         this.props.createPost(newPost)
     }
     componentDidMount() {
@@ -67,7 +70,7 @@ class SocialPage extends Component {
                                     <CardTitle>Create a New Post</CardTitle>
                                     <FormContainer>
                                         <InputField>
-                                            <TextArea id="text" name="text" onChange={this.handleInputChange}/>
+                                            <TextArea id="text" name="text" onChange={this.handleInputChange} value={this.state.text}/>
                                             <Label className="active" htmlFor="text">Say Something</Label>
                                             <Button className="btn waves-effect waves-light amber darken-4" onClick={this.addPost}>Submit <i className="material-icons right">send</i></Button>
                                         </InputField>
