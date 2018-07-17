@@ -4,8 +4,10 @@ import Nav from "./components/Nav";
 import MainSearch from "./pages/MainSearch";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import CommentsPage from "./pages/Comments";
 //import Footer from "./components/Footer";
 import Footer from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute"
 import SocialPage from "./pages/SocialPage";
 import NoMatch from "./pages/NoMatch";
 import "./App.css";
@@ -21,14 +23,13 @@ if(localStorage.jwtToken) {
   //set auth token header auth
   setAuthToken(localStorage.jwtToken);
   const decoded = jwt_decode(localStorage.jwtToken);
-  console.log(decoded)
   store.dispatch(setCurrentUser(decoded));
   //Check for expired token
   const currentTime = Date.now() / 1000
   if(decoded.exp < currentTime) {
     //Logout User
-    store.dispatch(logoutUser)
-    window.location.href = "/";
+    store.dispatch(logoutUser())
+    //window.location.href = "/";
   }
 }
 
@@ -38,15 +39,22 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <React.Fragment>
+            <div className="Site">
+              <div className="Site-content">
               <Nav/>
                 <Switch>
                   <Route exact path="/" component={MainSearch}/>
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/register" component={Register}/>
-                  <Route exact path="/social" component={SocialPage} />
+                  <PrivateRoute exact path="/social" component={SocialPage}/>
+                  <PrivateRoute exact path="/comments/:id" component={CommentsPage}/>
                   <Route component={NoMatch}/>
                 </Switch>
+                </div>
+                <div className="Site-content:after">
               <Footer/>
+                </div>
+              </div>
           </React.Fragment>
         </Router>
       </Provider>

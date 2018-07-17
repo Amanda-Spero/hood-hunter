@@ -7,13 +7,16 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const app = express();
 
+const posts = require("./routes/api/posts");
+
 app.use (bodyParser.json())
 app.use (bodyParser.urlencoded({extended: true}))
 
 //mongoose.connect("mongodb://hood:hunter4@ds121331.mlab.com:21331/hoodhunterproj");
 // Serve up static assets (usually on heroku)
-
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 
 /* app.post("/add-saved-neighborhood", function(req, res){
     const neighborhood = new Neighborhoods (req.body)
