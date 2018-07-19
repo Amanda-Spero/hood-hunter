@@ -10,6 +10,7 @@ import { getPosts, createPost, deletePost} from "../../actions/postActions"
 import {Link} from "react-router-dom"
 import isEmpty from "../../validation/is-empty";
 import "./spanHover.css"
+import Jumbotron from "../../components/Jumbotron4/Jumbotron4";
 class SocialPage extends Component {
     constructor() {
         super();
@@ -65,6 +66,8 @@ class SocialPage extends Component {
         const {posts} = this.props
         const {id} = this.props.auth.user
         return (
+        <div>
+            <Jumbotron />
             <Section>
                 <Container>
                     <Row>
@@ -99,7 +102,7 @@ class SocialPage extends Component {
                     </Row>
                 </Container>
             </Section>
-
+        </div>
         )
     }
 }
