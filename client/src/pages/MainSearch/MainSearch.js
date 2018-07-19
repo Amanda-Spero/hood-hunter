@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { Container } from "../../components/Grid";
 import Section from "../../components/Section";
 import Jumbotron from "../../components/Jumbotron";
-import MapWithASearchBox from "../../components/SearchBar";
+// import MapWithASearchBox from "../../components/SearchBar";
 // import SearchResults from "../../components/SearchResults";
 // import SearchForm from "../../components/SearchForm";
 import "./Main.css";
@@ -12,20 +12,20 @@ class MainSearch extends Component {
         return (
           <Container>    
                 <Jumbotron />          
-                <MapWithASearchBox /> 
-          <div className="container">
+                {/* <MapWithASearchBox />  */}
+          {/* <div className="container">
             <div className="section">
-              <div className="row">
+              <div className="row"> */}
                 {/* <div className="col s12 m5">
               </div>     */}
-                <div className="col s12 m7">      
+                {/* <div className="col s12 m7">       */}
                   {/* <SearchResults /> */}
-                </div>
+                {/* </div>
               </div>
               <div className="resultsRow">
               </div>
             </div>                        
-           </div>
+           </div> */}
           </Container>
  
           
