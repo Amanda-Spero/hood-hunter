@@ -5,7 +5,7 @@ import MainSearch from "./pages/MainSearch";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import CommentsPage from "./pages/Comments";
-//import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 //import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute"
 import SocialPage from "./pages/SocialPage";
@@ -52,7 +52,7 @@ class App extends Component {
                 </Switch>
                 </div>
                 <div className="Site-content:after">
-              {/* <Footer/> */}
+              <Footer/>
                 </div>
               </div>
           </React.Fragment>
