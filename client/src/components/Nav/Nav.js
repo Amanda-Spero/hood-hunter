@@ -3,7 +3,7 @@ import { Navbar, NavItem } from 'react-materialize';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {logoutUser} from "../../actions/authActions";
-
+import "./Nav.css"
 class Nav extends Component {
   componentDidMount() {
     const el = document.querySelector('.nav-wrapper')
@@ -36,7 +36,7 @@ class Nav extends Component {
         </React.Fragment>
     )
     return (
-      <Navbar brand='Hood Hunter' right className="blue-grey" options={sideNavOptions}>
+      <Navbar brand='' id="logo" right  options={sideNavOptions}>
             <NavItem href='/' style={styleFont.sideNavLinks}>Home</NavItem>
             {isAuthenticated ? authNavBarItems : unAuthNavBarItems}
       </Navbar>

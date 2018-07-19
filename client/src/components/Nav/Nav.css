@@ -1,0 +1,15 @@
+#logo {
+    /* if this doesn't show up when you have ths hosted, try ./images/1Logo2.png */
+    background-image: url("./1Logo2.png"),linear-gradient(to bottom,#607d8b,#607d8b);
+    background-size:10%, contain;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    background-position: 20% 50%;
+}
+
+.blue-grey:before {
+    float:left;
+    background-color:red;
+    height:50px;
+    width:50px;
+}

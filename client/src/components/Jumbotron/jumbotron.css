@@ -1,5 +1,5 @@
 
-.parallax {
+#index-banner {
     background-image: linear-gradient(to bottom,transparent 0%, transparent 50%, white),url("https://c1.staticflickr.com/9/8082/8297642349_3f1116278f_b.jpg");
     background-position: 50%;
     background-repeat: no-repeat;

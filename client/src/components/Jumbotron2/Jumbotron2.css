@@ -1,0 +1,8 @@
+
+#index-banner2{
+    background-image: linear-gradient(to bottom,transparent 0%, transparent 50%, white),url("./Park.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .85;
+}

@@ -6,6 +6,7 @@ import {Column, Row} from "../../components/Grid";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {loginUser, clearErrors} from "../../actions/authActions";
+import Jumbotron from "../../components/Jumbotron2/Jumbotron2";
 class Login extends Component {
     constructor() {
         super()
@@ -49,7 +50,9 @@ class Login extends Component {
     render() {
         const {errors} = this.state
         return (
-            <Section>
+        <div>
+            <Jumbotron />
+             <Section>
                 <Container>
                     <Row>
                         <Column className="col m12">
@@ -68,6 +71,7 @@ class Login extends Component {
                     </Row>
                 </Container>
             </Section>
+        </div>
         )
     }
 }

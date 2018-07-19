@@ -7,6 +7,8 @@ import {Column, Row} from "../../components/Grid"
 import {connect} from "react-redux";
 import {registerUser, clearErrors} from "../../actions/authActions";
 import {withRouter} from "react-router-dom";
+import Jumbotron from "../../components/Jumbotron3/Jumbotron3";
+import Jumbotron3 from "../../components/Jumbotron3/Jumbotron3";
 class Register extends Component {
     constructor() {
         super();
@@ -53,6 +55,8 @@ class Register extends Component {
     render() {
         const {errors} = this.state;
         return (
+        <div>
+            <Jumbotron3 />
             <Section>
                 <Container>
                     <Row>
@@ -80,6 +84,7 @@ class Register extends Component {
                     </Row>
                 </Container>
             </Section>
+        </div>
         )
     }
 }

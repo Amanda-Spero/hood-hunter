@@ -1,8 +1,8 @@
 import React from "react";
-import "./jumbotron.css";
+import "./Jumbotron2.css";
 
-const Jumbotron = () => (
-<div id="index-banner" className="parallax-container">
+const Jumbotron2 = () => (
+<div id="index-banner2" className="parallax-container">
 <div className="section no-pad-bot">
   <div className="container">
     <br /><br /><br />
@@ -12,16 +12,17 @@ const Jumbotron = () => (
     </h1>
     <br /> 
     <div className="row center">
-      <h4 className="header col s12 black-text transparent">Search your potential neighborhood below!</h4>
+      <h4 className="header col s12 black-text transparent">The Neighborhood of Your Dreams is One Click Away!</h4>
     </div>
     
     <br /><br />
 
   </div>
 </div>
+
 </div>
  
 );
 
-export default Jumbotron;
+export default Jumbotron2;
 
