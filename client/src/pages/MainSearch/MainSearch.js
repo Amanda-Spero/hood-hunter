@@ -6,7 +6,6 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import MapWithASearchBox from "../../components/SearchBar";
 // import SearchResults from "../../components/SearchResults";
 // import SearchForm from "../../components/SearchForm";
-import {MapContainer} from "../../components/Map"
 import "./Main.css";
 
 class MainSearch extends Component {
@@ -14,7 +13,6 @@ class MainSearch extends Component {
         return (
           <Container>    
                 <Jumbotron />
-                <MapContainer/>
           </Container>
  
           
